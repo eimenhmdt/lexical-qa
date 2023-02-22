@@ -79,6 +79,7 @@ export default function Home() {
                           message.sender === "User" ? "/user.svg" : "/logo.png"
                         }
                         name={message.sender}
+                        status="available"
                       />
                     </Message>
                   );
