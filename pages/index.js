@@ -29,9 +29,6 @@ export default function Home() {
     setLoading(true);
     setMessages([...messages, { text: message, sender: "User" }]);
 
-    // fetch response from this api endpoint https://berri-server-gpt-index-mtj6.zeet-berri.zeet.app/berri_query?proj_path=indexes/eimen.hamedat@gmail.com/109b8131-6939-4a0a-9b2c-eea535d00d5f&query=
-    // and then set the response as the message
-
     const response = await fetch(
       `https://berri-server-gpt-index-mtj6.zeet-berri.zeet.app/berri_query?proj_path=indexes/eimen.hamedat@gmail.com/109b8131-6939-4a0a-9b2c-eea535d00d5f&query=${question}`
     );
@@ -58,7 +55,6 @@ export default function Home() {
           <h2 className="text-3xl font-extrabold tracking-tighter font-red-hat-display mb-4 text-stone-700">
             Lexical Docs Q&A
           </h2>
-          <p> {question}</p>
         </div>
         <div
           style={{ position: "relative", height: "500px" }}
