@@ -112,7 +112,6 @@ export default function Home() {
                 onChange={setQuestion}
                 onSend={handleSendMessage}
                 sendButton={true}
-                value={question}
               />
             </ChatContainer>
           </MainContainer>
