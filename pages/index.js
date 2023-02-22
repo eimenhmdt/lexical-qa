@@ -11,8 +11,11 @@ import {
   MessageInput,
   Avatar,
   SendButton,
+  Loader,
 } from "@chatscope/chat-ui-kit-react";
 import { FaUserAlt } from "react-icons/fa";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import clsx from "clsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +43,7 @@ export default function Home() {
       { text: data.response, sender: "Lexical" },
     ]);
     setLoading(false);
+    setQuestion("");
   };
 
   return (
@@ -110,9 +114,10 @@ export default function Home() {
 
               <MessageInput
                 placeholder="Type message to Lexical AI here"
+                value={loading ? "Loading..." : question}
                 onChange={setQuestion}
                 onSend={handleSendMessage}
-                sendButton={true}
+                className={clsx(loading && "opacity-10 animate-pulse")}
               />
             </ChatContainer>
           </MainContainer>
